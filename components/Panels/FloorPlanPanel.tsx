@@ -25,6 +25,8 @@ export default function FloorPlanPanel() {
   const setAnalyzing = useEditorUI((s) => s.setAnalyzing);
   const analysisError = useEditorUI((s) => s.analysisError);
   const setAnalysisError = useEditorUI((s) => s.setAnalysisError);
+  const analysisNotes = useEditorUI((s) => s.analysisNotes);
+  const setAnalysisNotes = useEditorUI((s) => s.setAnalysisNotes);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
   const plan = project.floorPlan;
@@ -65,6 +67,7 @@ export default function FloorPlanPanel() {
           t1: Math.max(0, Math.min(1, Math.max(o.t0, o.t1))),
         }));
       setAnalysis(walls, openings, analysis.estimatedPixelsPerMeter);
+      setAnalysisNotes(analysis.notes || null);
     } catch (e) {
       setAnalysisError(e instanceof Error ? e.message : "Analysis failed");
     } finally {
@@ -129,6 +132,17 @@ export default function FloorPlanPanel() {
                   : "Detect walls with AI"}
             </button>
             {analysisError && <p className="mt-2 text-xs text-red-400">{analysisError}</p>}
+            {analyzing && (
+              <p className="mt-2 text-xs text-zinc-500">
+                Two AI passes: detection, then self-correction against an overlay. Complex plans
+                can take a few minutes.
+              </p>
+            )}
+            {analysisNotes && !analyzing && (
+              <p className="mt-2 rounded bg-zinc-800/60 p-2 text-[11px] leading-relaxed text-zinc-400">
+                <span className="font-medium text-zinc-300">AI notes:</span> {analysisNotes}
+              </p>
+            )}
             {plan.walls.length > 0 && (
               <p className="mt-2 text-xs text-zinc-500">
                 {plan.walls.length} walls, {plan.openings.length} openings. Drag endpoints to fix

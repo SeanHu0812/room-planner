@@ -1,0 +1,206 @@
+{
+  "walls": [
+    {
+      "x1": 103.5,
+      "y1": 107,
+      "x2": 1397,
+      "y2": 107
+    },
+    {
+      "x1": 105.3,
+      "y1": 107,
+      "x2": 105.3,
+      "y2": 700
+    },
+    {
+      "x1": 107,
+      "y1": 700,
+      "x2": 475,
+      "y2": 700
+    },
+    {
+      "x1": 475,
+      "y1": 765,
+      "x2": 707,
+      "y2": 765
+    },
+    {
+      "x1": 707,
+      "y1": 765,
+      "x2": 707,
+      "y2": 975
+    },
+    {
+      "x1": 707,
+      "y1": 975,
+      "x2": 1397,
+      "y2": 975
+    },
+    {
+      "x1": 1397,
+      "y1": 107,
+      "x2": 1397,
+      "y2": 975
+    },
+    {
+      "x1": 415,
+      "y1": 107,
+      "x2": 415,
+      "y2": 520
+    },
+    {
+      "x1": 105.3,
+      "y1": 420,
+      "x2": 415,
+      "y2": 420
+    },
+    {
+      "x1": 105.3,
+      "y1": 520,
+      "x2": 475,
+      "y2": 520
+    },
+    {
+      "x1": 475,
+      "y1": 520,
+      "x2": 475,
+      "y2": 765
+    },
+    {
+      "x1": 345,
+      "y1": 520,
+      "x2": 345,
+      "y2": 700
+    },
+    {
+      "x1": 1063,
+      "y1": 107,
+      "x2": 1063,
+      "y2": 975
+    },
+    {
+      "x1": 835,
+      "y1": 630,
+      "x2": 1063,
+      "y2": 630
+    },
+    {
+      "x1": 835,
+      "y1": 630,
+      "x2": 835,
+      "y2": 975
+    },
+    {
+      "x1": 707,
+      "y1": 840,
+      "x2": 835,
+      "y2": 840
+    },
+    {
+      "x1": 1175,
+      "y1": 550,
+      "x2": 1397,
+      "y2": 550
+    },
+    {
+      "x1": 1175,
+      "y1": 550,
+      "x2": 1175,
+      "y2": 700
+    },
+    {
+      "x1": 1063,
+      "y1": 700,
+      "x2": 1397,
+      "y2": 700
+    }
+  ],
+  "openings": [
+    {
+      "wallIndex": 0,
+      "type": "window",
+      "t0": 0.042,
+      "t1": 0.177
+    },
+    {
+      "wallIndex": 0,
+      "type": "window",
+      "t0": 0.32,
+      "t1": 0.478
+    },
+    {
+      "wallIndex": 0,
+      "type": "window",
+      "t0": 0.51,
+      "t1": 0.667
+    },
+    {
+      "wallIndex": 0,
+      "type": "window",
+      "t0": 0.788,
+      "t1": 0.948
+    },
+    {
+      "wallIndex": 6,
+      "type": "window",
+      "t0": 0.142,
+      "t1": 0.349
+    },
+    {
+      "wallIndex": 7,
+      "type": "door",
+      "t0": 0.104,
+      "t1": 0.298
+    },
+    {
+      "wallIndex": 12,
+      "type": "door",
+      "t0": 0.082,
+      "t1": 0.179
+    },
+    {
+      "wallIndex": 12,
+      "type": "door",
+      "t0": 0.72,
+      "t1": 0.8
+    },
+    {
+      "wallIndex": 13,
+      "type": "door",
+      "t0": 0.285,
+      "t1": 0.636
+    },
+    {
+      "wallIndex": 15,
+      "type": "door",
+      "t0": 0.18,
+      "t1": 0.73
+    },
+    {
+      "wallIndex": 5,
+      "type": "door",
+      "t0": 0.251,
+      "t1": 0.388
+    },
+    {
+      "wallIndex": 11,
+      "type": "door",
+      "t0": 0.139,
+      "t1": 0.528
+    },
+    {
+      "wallIndex": 10,
+      "type": "door",
+      "t0": 0.05,
+      "t1": 0.35
+    },
+    {
+      "wallIndex": 17,
+      "type": "door",
+      "t0": 0.3,
+      "t1": 0.85
+    }
+  ],
+  "estimatedPixelsPerMeter": 99,
+  "notes": "Removed magenta lines that followed the kitchen island/counter and appliance block (DW, MW/REF) rather than walls. Merged and extended interior walls so every room closes: bedroom right wall (x=415) runs from top wall to y=520; x=475 runs from y=520 to the stepped bottom at y=765; master-bedroom/foyer wall at x=1063 runs full height. Added missing bathroom/W-D divider (x=345), WIC walls (y=550, x=1175) and master-bath divider (y=700). Scale derived from the red/blue dimension annotations (e.g. 18.54 ft over ~560 px, 8.69 ft over ~265 px) giving ~99 px per meter. Door/window extents estimated from wall gaps and swing arcs; the foyer entry door is assumed on the bottom exterior wall."
+}

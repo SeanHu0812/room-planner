@@ -43,6 +43,19 @@ Open http://localhost:3000.
 
 Next.js (App Router) · React Three Fiber + drei · Zustand · Claude API (structured outputs + vision) · Meshy image-to-3D · IndexedDB (idb-keyval)
 
+## Wall-detection quality
+
+Detection runs a three-stage pipeline: (1) a structured vision pass that traces the outer boundary first, then interior partitions, (2) a self-correction pass where the detected walls are drawn over the plan and the model fixes its own errors, and (3) deterministic cleanup — axis snapping, corner welding, and T-junction attachment. Hand-drawn measurement annotations (red/blue lines with lengths) are ignored as walls but used for scale.
+
+There's an eval harness with a realistic 2BR/2BA fixture and ground-truth walls:
+
+```bash
+npm run gen:fixture      # regenerate test/fixtures/apartment.png + ground truth
+npm run eval:floorplan   # score the API against it (requires dev server + API key)
+```
+
+Current scores on the annotated fixture: 100% length-weighted recall and precision, ~5 px mean deviation, 1% scale error. A diagnostic overlay is written to `test/fixtures/eval-overlay.png` after each run.
+
 ## Notes & limitations
 
 - Generated meshes are scaled uniformly to the product's real height (footprint may differ slightly from the true W×D for oddly oriented generations); the placeholder models always use exact W×D×H.

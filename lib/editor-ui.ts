@@ -14,6 +14,7 @@ interface EditorUIState {
   calibLine: { x1: number; y1: number; x2: number; y2: number } | null;
   analyzing: boolean;
   analysisError: string | null;
+  analysisNotes: string | null;
 
   setTool: (tool: EditorTool) => void;
   setDrawStart: (p: { x: number; y: number } | null) => void;
@@ -21,6 +22,7 @@ interface EditorUIState {
   setCalibLine: (l: EditorUIState["calibLine"]) => void;
   setAnalyzing: (v: boolean) => void;
   setAnalysisError: (e: string | null) => void;
+  setAnalysisNotes: (n: string | null) => void;
 }
 
 export const useEditorUI = create<EditorUIState>((set) => ({
@@ -30,6 +32,7 @@ export const useEditorUI = create<EditorUIState>((set) => ({
   calibLine: null,
   analyzing: false,
   analysisError: null,
+  analysisNotes: null,
 
   setTool: (tool) => set({ tool, drawStart: null, calibStart: null, calibLine: null }),
   setDrawStart: (drawStart) => set({ drawStart }),
@@ -37,4 +40,5 @@ export const useEditorUI = create<EditorUIState>((set) => ({
   setCalibLine: (calibLine) => set({ calibLine }),
   setAnalyzing: (analyzing) => set({ analyzing }),
   setAnalysisError: (analysisError) => set({ analysisError }),
+  setAnalysisNotes: (analysisNotes) => set({ analysisNotes }),
 }));

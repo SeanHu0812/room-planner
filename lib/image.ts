@@ -3,7 +3,7 @@
 /** Downscale an uploaded image to a max edge and return a JPEG/PNG data URL + dimensions. */
 export async function prepareFloorPlanImage(
   file: File,
-  maxEdge = 2000
+  maxEdge = 2500 // Claude Opus 5 vision supports up to 2576px on the long edge
 ): Promise<{ dataUrl: string; width: number; height: number; mediaType: string }> {
   const bitmap = await createImageBitmap(file);
   const scale = Math.min(1, maxEdge / Math.max(bitmap.width, bitmap.height));
