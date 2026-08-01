@@ -1,206 +1,248 @@
 {
   "walls": [
     {
-      "x1": 103.5,
-      "y1": 107,
-      "x2": 1397,
-      "y2": 107
+      "x1": 105,
+      "y1": 100,
+      "x2": 700,
+      "y2": 100
     },
     {
-      "x1": 105.3,
-      "y1": 107,
-      "x2": 105.3,
-      "y2": 700
+      "x1": 700,
+      "y1": 100,
+      "x2": 700,
+      "y2": 42
     },
     {
-      "x1": 107,
-      "y1": 700,
+      "x1": 700,
+      "y1": 42,
+      "x2": 812,
+      "y2": 42
+    },
+    {
+      "x1": 812,
+      "y1": 42,
+      "x2": 812,
+      "y2": 100
+    },
+    {
+      "x1": 812,
+      "y1": 100,
+      "x2": 1450,
+      "y2": 100
+    },
+    {
+      "x1": 1450,
+      "y1": 100,
+      "x2": 1450,
+      "y2": 990
+    },
+    {
+      "x1": 700,
+      "y1": 990,
+      "x2": 1450,
+      "y2": 990
+    },
+    {
+      "x1": 700,
+      "y1": 782,
+      "x2": 700,
+      "y2": 990
+    },
+    {
+      "x1": 528,
+      "y1": 782,
+      "x2": 700,
+      "y2": 782
+    },
+    {
+      "x1": 528,
+      "y1": 561.5,
+      "x2": 528,
+      "y2": 782
+    },
+    {
+      "x1": 105,
+      "y1": 710,
+      "x2": 528,
+      "y2": 710
+    },
+    {
+      "x1": 105,
+      "y1": 100,
+      "x2": 105,
+      "y2": 710
+    },
+    {
+      "x1": 105,
+      "y1": 562.3,
+      "x2": 528,
+      "y2": 562.3
+    },
+    {
+      "x1": 380,
+      "y1": 562.3,
+      "x2": 380,
+      "y2": 710
+    },
+    {
+      "x1": 105,
+      "y1": 467,
       "x2": 475,
-      "y2": 700
+      "y2": 467
     },
     {
       "x1": 475,
-      "y1": 765,
-      "x2": 707,
-      "y2": 765
-    },
-    {
-      "x1": 707,
-      "y1": 765,
-      "x2": 707,
-      "y2": 975
-    },
-    {
-      "x1": 707,
-      "y1": 975,
-      "x2": 1397,
-      "y2": 975
-    },
-    {
-      "x1": 1397,
-      "y1": 107,
-      "x2": 1397,
-      "y2": 975
-    },
-    {
-      "x1": 415,
-      "y1": 107,
-      "x2": 415,
-      "y2": 520
-    },
-    {
-      "x1": 105.3,
-      "y1": 420,
-      "x2": 415,
-      "y2": 420
-    },
-    {
-      "x1": 105.3,
-      "y1": 520,
+      "y1": 100,
       "x2": 475,
-      "y2": 520
+      "y2": 562.3
     },
     {
-      "x1": 475,
-      "y1": 520,
-      "x2": 475,
-      "y2": 765
+      "x1": 855,
+      "y1": 640,
+      "x2": 855,
+      "y2": 990
     },
     {
-      "x1": 345,
-      "y1": 520,
-      "x2": 345,
-      "y2": 700
+      "x1": 855,
+      "y1": 640,
+      "x2": 1065,
+      "y2": 640
     },
     {
-      "x1": 1063,
-      "y1": 107,
-      "x2": 1063,
-      "y2": 975
+      "x1": 700,
+      "y1": 860,
+      "x2": 855,
+      "y2": 860
     },
     {
-      "x1": 835,
-      "y1": 630,
-      "x2": 1063,
-      "y2": 630
+      "x1": 1065,
+      "y1": 100,
+      "x2": 1065,
+      "y2": 990
     },
     {
-      "x1": 835,
-      "y1": 630,
-      "x2": 835,
-      "y2": 975
+      "x1": 1205,
+      "y1": 490,
+      "x2": 1450,
+      "y2": 490
     },
     {
-      "x1": 707,
-      "y1": 840,
-      "x2": 835,
-      "y2": 840
+      "x1": 1205,
+      "y1": 490,
+      "x2": 1205,
+      "y2": 720
     },
     {
-      "x1": 1175,
-      "y1": 550,
-      "x2": 1397,
-      "y2": 550
+      "x1": 1065,
+      "y1": 720,
+      "x2": 1450,
+      "y2": 720
     },
     {
-      "x1": 1175,
-      "y1": 550,
-      "x2": 1175,
-      "y2": 700
-    },
-    {
-      "x1": 1063,
-      "y1": 700,
-      "x2": 1397,
-      "y2": 700
+      "x1": 1290,
+      "y1": 632,
+      "x2": 1450,
+      "y2": 632
     }
   ],
   "openings": [
     {
       "wallIndex": 0,
       "type": "window",
-      "t0": 0.042,
-      "t1": 0.177
+      "t0": 0.059,
+      "t1": 0.403
     },
     {
       "wallIndex": 0,
       "type": "window",
-      "t0": 0.32,
-      "t1": 0.478
+      "t0": 0.516,
+      "t1": 0.908
     },
     {
-      "wallIndex": 0,
-      "type": "window",
-      "t0": 0.51,
-      "t1": 0.667
+      "wallIndex": 2,
+      "type": "door",
+      "t0": 0.134,
+      "t1": 0.759
     },
     {
-      "wallIndex": 0,
+      "wallIndex": 4,
       "type": "window",
-      "t0": 0.788,
-      "t1": 0.948
+      "t0": 0.028,
+      "t1": 0.318
+    },
+    {
+      "wallIndex": 4,
+      "type": "window",
+      "t0": 0.412,
+      "t1": 0.721
+    },
+    {
+      "wallIndex": 4,
+      "type": "window",
+      "t0": 0.812,
+      "t1": 0.922
+    },
+    {
+      "wallIndex": 5,
+      "type": "window",
+      "t0": 0.107,
+      "t1": 0.388
     },
     {
       "wallIndex": 6,
-      "type": "window",
-      "t0": 0.142,
-      "t1": 0.349
+      "type": "door",
+      "t0": 0.273,
+      "t1": 0.391
     },
     {
-      "wallIndex": 7,
+      "wallIndex": 9,
       "type": "door",
-      "t0": 0.104,
-      "t1": 0.298
-    },
-    {
-      "wallIndex": 12,
-      "type": "door",
-      "t0": 0.082,
-      "t1": 0.179
-    },
-    {
-      "wallIndex": 12,
-      "type": "door",
-      "t0": 0.72,
-      "t1": 0.8
+      "t0": 0.225,
+      "t1": 0.563
     },
     {
       "wallIndex": 13,
       "type": "door",
-      "t0": 0.285,
-      "t1": 0.636
+      "t0": 0.18,
+      "t1": 0.76
     },
     {
       "wallIndex": 15,
       "type": "door",
-      "t0": 0.18,
-      "t1": 0.73
-    },
-    {
-      "wallIndex": 5,
-      "type": "door",
-      "t0": 0.251,
-      "t1": 0.388
-    },
-    {
-      "wallIndex": 11,
-      "type": "door",
-      "t0": 0.139,
-      "t1": 0.528
-    },
-    {
-      "wallIndex": 10,
-      "type": "door",
-      "t0": 0.05,
-      "t1": 0.35
+      "t0": 0.168,
+      "t1": 0.302
     },
     {
       "wallIndex": 17,
       "type": "door",
-      "t0": 0.3,
-      "t1": 0.85
+      "t0": 0.333,
+      "t1": 0.69
+    },
+    {
+      "wallIndex": 18,
+      "type": "door",
+      "t0": 0.226,
+      "t1": 0.71
+    },
+    {
+      "wallIndex": 19,
+      "type": "door",
+      "t0": 0.118,
+      "t1": 0.185
+    },
+    {
+      "wallIndex": 19,
+      "type": "door",
+      "t0": 0.764,
+      "t1": 0.848
+    },
+    {
+      "wallIndex": 21,
+      "type": "door",
+      "t0": 0.13,
+      "t1": 0.478
     }
   ],
   "estimatedPixelsPerMeter": 99,
-  "notes": "Removed magenta lines that followed the kitchen island/counter and appliance block (DW, MW/REF) rather than walls. Merged and extended interior walls so every room closes: bedroom right wall (x=415) runs from top wall to y=520; x=475 runs from y=520 to the stepped bottom at y=765; master-bedroom/foyer wall at x=1063 runs full height. Added missing bathroom/W-D divider (x=345), WIC walls (y=550, x=1175) and master-bath divider (y=700). Scale derived from the red/blue dimension annotations (e.g. 18.54 ft over ~560 px, 8.69 ft over ~265 px) giving ~99 px per meter. Door/window extents estimated from wall gaps and swing arcs; the foyer entry door is assumed on the bottom exterior wall."
+  "notes": "Scale derived from several labels (11.15 ft = 340 px, 7.87 ft = 235 px, 13.78 ft = 415 px) giving ~99 px/m. Kitchen island/counters, the stove-MW-REF run, the diamond table near the master bedroom and the thin WIC shelving line (y~655) were treated as furniture/fixtures, not walls; the full-thickness band at y~632 inside the WIC is kept as a partition. Exterior right wall, left wall and the x=1065 spine are drawn as continuous lines through the dark piers. Door positions inferred from swing arcs; the CL between bedroom and bathroom shows no drawn door opening."
 }

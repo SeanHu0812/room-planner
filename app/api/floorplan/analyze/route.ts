@@ -64,7 +64,7 @@ function detectionPrompt(width: number, height: number): string {
 
 Work systematically:
 1. First trace the OUTER BOUNDARY of the unit: follow the thick exterior walls around the whole perimeter, segment by segment. The boundary must form a closed loop — consecutive segments share exact endpoint coordinates. Exterior walls are usually the thickest dark/gray bands; use each wall's CENTERLINE.
-2. Then add every INTERIOR partition wall: walls between rooms, around bathrooms, closets (CL/WIC), kitchens, foyers. Include short stub walls beside doorways. Interior partition endpoints must land exactly on the walls they meet (T-junctions) or on corner points.
+2. Then add every INTERIOR partition wall: walls between rooms, around bathrooms, closets (CL/WIC), kitchens, foyers. Include short stub walls beside doorways, and partition walls inside walk-in closets when they are drawn as full-thickness wall bands (thin single lines inside closets are shelving, not walls). Interior partition endpoints must land exactly on the walls they meet (T-junctions) or on corner points.
 3. Almost all walls in apartment floor plans are exactly horizontal or vertical. Only output a diagonal wall if the drawing clearly shows one. Keep horizontal walls at constant y, vertical walls at constant x.
 4. A doorway gap in a wall is still one wall: draw the wall THROUGH the gap and record the gap as a door opening (t0..t1 along the wall). Door swing arcs mark doors. Thin double/triple lines within exterior walls are windows.
 5. Read printed dimension labels (e.g. "12'-5\\" x 10'-8\\"", "9.93 ft", "3.5 m") and measurement annotations. Pick one clearly-labeled straight distance, measure its pixel length, and compute pixels per METER (1 ft = 0.3048 m). Cross-check with a second label if available.
@@ -77,7 +77,7 @@ const REFINE_PROMPT = `The first image is the original floor plan. The second im
 
 Compare them carefully and output a corrected, COMPLETE wall list (not a diff):
 - Remove magenta lines that don't correspond to real walls (furniture, counters, dimension/annotation lines).
-- Add walls that are missing (check every room: bedrooms, bathrooms, closets, kitchen, foyer — each room must be fully enclosed by walls, except where it opens into another space).
+- Add walls that are missing (check every room: bedrooms, bathrooms, closets, kitchen, foyer — each room must be fully enclosed by walls, except where it opens into another space). Full-thickness wall bands inside walk-in closets are partition walls — keep them; only thin single lines are shelving.
 - Fix misaligned lines: each magenta line should sit ON the dark wall band it represents; corners must close; interior walls must reach the walls they meet.
 - Keep walls axis-aligned (constant x or constant y) unless the drawing clearly shows a diagonal.
 - Re-check doors (swing arcs / gaps) and windows, and the pixels-per-meter estimate from dimension labels (1 ft = 0.3048 m).
@@ -129,13 +129,14 @@ function normalizeCoords(a: RawAnalysis, width: number, height: number): RawAnal
 
 async function callClaude(
   client: Anthropic,
-  content: Anthropic.MessageParam["content"]
+  content: Anthropic.MessageParam["content"],
+  effort: "medium" | "high"
 ): Promise<RawAnalysis> {
   const stream = client.messages.stream({
     model: "claude-opus-5",
     max_tokens: 32000,
     output_config: {
-      effort: "high",
+      effort,
       format: { type: "json_schema", schema: ANALYSIS_SCHEMA },
     },
     messages: [{ role: "user", content }],
@@ -194,9 +195,14 @@ export async function POST(req: NextRequest) {
   };
 
   try {
-    // Pass 1: structured detection
+    // Pass 1: structured detection. High effort matters here — at medium the
+    // model can drop entire boundary walls that pass 2 then fails to recover.
     const first = normalizeCoords(
-      await callClaude(client, [imageBlock, { type: "text", text: detectionPrompt(width, height) }]),
+      await callClaude(
+        client,
+        [imageBlock, { type: "text", text: detectionPrompt(width, height) }],
+        "high"
+      ),
       width,
       height
     );
@@ -215,11 +221,11 @@ export async function POST(req: NextRequest) {
           },
         };
         refined = normalizeCoords(
-          await callClaude(client, [
-            imageBlock,
-            overlayBlock,
-            { type: "text", text: REFINE_PROMPT },
-          ]),
+          await callClaude(
+            client,
+            [imageBlock, overlayBlock, { type: "text", text: REFINE_PROMPT }],
+            "high"
+          ),
           width,
           height
         );

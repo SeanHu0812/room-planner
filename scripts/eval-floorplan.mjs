@@ -2,6 +2,10 @@
 // Usage: node scripts/eval-floorplan.mjs [--url http://localhost:3000]
 import { readFileSync, writeFileSync } from "node:fs";
 import sharp from "sharp";
+import { Agent, setGlobalDispatcher } from "undici";
+
+// Two Opus vision passes can exceed Node fetch's default 5-minute headers timeout
+setGlobalDispatcher(new Agent({ headersTimeout: 1200000, bodyTimeout: 1200000 }));
 
 const base = process.argv.includes("--url")
   ? process.argv[process.argv.indexOf("--url") + 1]

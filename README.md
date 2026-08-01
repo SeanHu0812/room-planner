@@ -54,7 +54,7 @@ npm run gen:fixture      # regenerate test/fixtures/apartment.png + ground truth
 npm run eval:floorplan   # score the API against it (requires dev server + API key)
 ```
 
-Current scores on the annotated fixture: 100% length-weighted recall and precision, ~5 px mean deviation, 1% scale error. A diagnostic overlay is written to `test/fixtures/eval-overlay.png` after each run.
+The fixture replicates a real 2BR/2BA plan's hard features: column masses straddling walls, a protruding entry vestibule, printed dimension arrows, a subdivided walk-in closet, and furniture/counter distractors. Current scores: 99.4% length-weighted recall, 99.3% precision, ~4 px mean deviation, ~1% scale error, in ~5 minutes (two Opus vision passes). A diagnostic overlay is written to `test/fixtures/eval-overlay.png` after each run.
 
 ## Notes & limitations
 
